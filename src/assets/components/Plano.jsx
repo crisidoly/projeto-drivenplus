@@ -57,8 +57,10 @@ if (planoSingular && planoSingular.perks) {
     <PopUp>
       <ContainerPopUp>
         <p>Tem certeza que deseja assinar o plano {planoSingular.name}R${planoSingular.price}</p>
-        <button onClick={handlePost}>Sim</button>
-        <button onClick={() => setAparecerPopUp(false)}>Não</button>
+        <Botoes>
+          <button onClick={handlePost}>Sim</button>
+          <button onClick={() => setAparecerPopUp(false)}>Não</button>
+        </Botoes> 
       </ContainerPopUp>
     </PopUp>}
       <Container>
@@ -230,7 +232,8 @@ const Preco = styled.div`
 
 const PopUp = styled.div`
 background: rgba(0, 0, 0, 0.7);
-z-index: 1;
+position: absolute;
+z-index: 2;
 width: 100vw;
 height: 100vh;
 display: flex;
@@ -239,8 +242,39 @@ align-items: center;
 `
 
 const ContainerPopUp = styled.div`
-  width: 248px;
-  height: 210px;
-  background-color: white;
-`
+width: 248px;
+height: 210px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+padding: 24px;
 
+background: #FFFFFF;
+border-radius: 12px;
+    p {
+      font-family: 'Roboto';
+      font-weight: 700;
+      font-size: 18px;  
+      text-align: center;
+      color: #000000;
+    }
+`
+const Botoes = styled.div`
+  display: flex;
+
+  button:nth-child(2) {
+    background-color: #FF4791;
+    width: 95px;
+    height: 52px;
+    border-radius: 8px;
+    border: none;
+  }
+  button:nth-child(1) {
+    background-color: #CECECE;
+    width: 95px;
+    height: 52px;
+    border-radius: 8px;
+    border: none;
+  }
+`;

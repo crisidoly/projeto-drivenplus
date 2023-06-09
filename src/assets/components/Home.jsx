@@ -19,7 +19,6 @@ export default function Home() {
   const handleMudarPlanoClick = () => {
     navigate("/subscriptions");
   };
-  console.log(planoSingular)
 
   const handleCancelarPlanoClick = () => {
     axios
@@ -32,12 +31,11 @@ export default function Home() {
       });
   };
 
-  
   return (
     <Container>
       <Header>
         <img src={planoSingular?.image} /> 
-        <p>Olá Drivener</p>
+        <p>Olá {setInfoUser}</p>
       </Header>
       <ul>
         {planoSingular?.perks.map((plano) => (
